@@ -1,0 +1,18 @@
+{% extends 'eleve/html.twig' %}
+
+{% block title %}Ajouter un élève{% endblock %}
+
+{% block body %}
+    <h1>Ajouter un élève</h1>
+
+    {% for message in app.flashes('success') %}
+        <div class="flash-success">{{ message }}</div>
+    {% endfor %}
+
+    {{ form_start(form) }}
+        {{ form_row(form.prenom) }}
+        {{ form_row(form.nom) }}
+        {{ form_row(form.classe) }}
+        {{ form_row(form.ajouter) }}
+    {{ form_end(form) }}
+{% endblock %}
