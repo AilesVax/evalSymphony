@@ -30,25 +30,25 @@ final class EleveController extends AbstractController
 
     #[Route('/eleve/ajouter', name: 'app_eleve_ajouter')]
     public function ajouter(Request $request, EntityManagerInterface $em): Response
-    {
-        $eleve = new Eleve();
-        
-        // Utilisation de la classe Form
-        $form = $this->createForm(EleveType::class, $eleve);
-        
-        $form->handleRequest($request);
+{
+    $eleve = new Eleve();
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em->persist($eleve);
-            $em->flush();
+    $form = $this->createForm(EleveType::class, $eleve);
 
-            $this->addFlash('success', 'Élève ajouté avec succès');
+    $form->handleRequest($request);
 
-            return $this->redirectToRoute('app_eleve_ajouter');
-        }
+    if ($form->isSubmitted() && $form->isValid()) {
+        $em->persist($eleve);
+        $em->flush();
 
-        return $this->render('eleve/ajouter.html.twig', [
-            'form' => $form,
-        ]);
+        $this->addFlash('success', 'Élève ajouté avec succès');
+        return $this->redirectToRoute('app_eleve_ajouter');
     }
+
+    return $this->render('eleve/ajouter.html.twig', [
+        'form' => $form->createView()
+    ]);
+}
+
+
 }
