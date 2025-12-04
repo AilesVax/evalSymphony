@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ClasseController!{% endblock %}
+{% block title %}Liste des classes{% endblock %}
 
 {% block body %}
 <style>
@@ -9,12 +9,29 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <h1>Liste des classes</h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>C:/laragon/www/ecole/evalSymphony/src/Controller/ClasseController.php</code></li>
-        <li>Your template at <code>C:/laragon/www/ecole/evalSymphony/templates/classe/index.html.twig</code></li>
-    </ul>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nom de la classe</th>
+                <th>Niveau</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for classe in classes %}
+                <tr>
+                    <td>{{ classe.id }}</td>
+                    <td>{{ classe.nomClasse }}</td>
+                    <td>{{ classe.niveau }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script type="module" src="{{ asset('assets/bootstrap.js') }}"></script>
 {% endblock %}
