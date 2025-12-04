@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\EleveRepository;
 use App\Entity\Eleve;
 use App\Entity\Classe;
 use Doctrine\ORM\EntityManagerInterface;

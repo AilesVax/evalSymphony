@@ -9,7 +9,7 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Liste des classes</h1>
+    <h1>Liste des eleves</h1>
 
     <table>
         <thead>
@@ -17,7 +17,6 @@
                 <th>ID</th>
                 <th>Prenom de l'eleve</th>
                 <th>Nom de l'eleve</th>
-                <th>Classe de l'eleve</th>
             </tr>
         </thead>
         <tbody>
@@ -27,12 +26,12 @@
                     <td>{{ eleve.prenom }}</td>
                     <td>{{ eleve.nom }}</td>
                     <td>{{ eleve.nom }}</td>
-                    <td>{{ eleve.classe.nomClasse }}</td>
                 </tr>
             {% endfor %}
         </tbody>
     </table>
 </div>
+
 {% endblock %}
 {% block javascripts %}
     <script type="module" src="{{ asset('assets/bootstrap.js') }}"></script>
