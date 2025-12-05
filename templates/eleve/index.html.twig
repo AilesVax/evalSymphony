@@ -26,7 +26,15 @@
                     <td>{{ eleve.prenom }}</td>
                     <td>{{ eleve.nom }}</td>
                     <td>{{ eleve.nom }}</td>
+                    <form action="{{ path('eleve_update', { id: eleve.id }) }}" method="post">
+    <input type="text" name="prenom" value="{{ eleve.prenom }}">
+    <button type="submit">Modifier</button>
+</form>
+
                 </tr>
+                    
+        Modifier
+    </a>
             {% endfor %}
         </tbody>
     </table>

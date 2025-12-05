@@ -50,5 +50,19 @@ final class EleveController extends AbstractController
     ]);
 }
 
+#[Route('/eleve/{id}', name: 'eleve_update', methods: ['POST'])]
+public function update(Request $request, EntityManagerInterface $entityManager, int $id): Response
+{
+    $eleve = $entityManager->getRepository(Eleve::class)->find($id);
 
+    if (!$eleve) {
+        throw $this->createNotFoundException('No eleve found for id '.$id);
+    }
+    $prenom = $request->request->get('prenom');
+    $eleve->setPrenom($prenom);
+
+    $entityManager->flush();
+
+    return $this->redirectToRoute('app_eleve');
+}
 }
