@@ -3,45 +3,56 @@
 {% block title %}Hello EleveController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
 <div class="example-wrapper">
-    <h1>Liste des eleves</h1>
+    <h1>Liste des élèves</h1>
+           <a href="{{ path('app_eleve_ajouter') }}" class="btn-blue mb-20">Ajouter un élève</a>
+
 
     <table>
+    
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Prenom de l'eleve</th>
-                <th>Nom de l'eleve</th>
+                <th>Classe</th>
+                <th>Prénom</th>
+                <th>Nom</th>
+                <th>Actions</th>
             </tr>
         </thead>
+
         <tbody>
             {% for eleve in eleves %}
                 <tr>
                     <td>{{ eleve.id }}</td>
                     <td>{{ eleve.prenom }}</td>
                     <td>{{ eleve.nom }}</td>
-                    <td>{{ eleve.nom }}</td>
-                    <form action="{{ path('eleve_update', { id: eleve.id }) }}" method="post">
-                        <input type="text" name="prenom" value="{{ eleve.prenom }}">
-                        <button type="submit">Modifier</button>
-                    </form>
-                     <form action="{{ path('eleve_delete', { id: eleve.id }) }}" method="post">
-                        <button type="submit">supprimer</button>
-                    </form>
 
+                    <td>
+                        <div class="actions">
+
+                            <!-- Update -->
+                            <form action="{{ path('eleve_update', { id: eleve.id }) }}" method="post" class="action-left">
+                                <input type="text" name="prenom" value="{{ eleve.prenom }}">
+                                <input type="text" name="nom" value="{{ eleve.nom }}">
+                                <button type="submit" class="modify">Modifier</button>
+                            </form>
+                            
+                            <!-- Delete -->
+                            <form action="{{ path('eleve_delete', { id: eleve.id }) }}" method="post" class="action-right">
+                                <button type="submit" class="delete">Supprimer</button>
+                            </form>
+
+                        </div>
+                    </td>
                 </tr>
-    </a>
             {% endfor %}
         </tbody>
+
     </table>
 </div>
 
 {% endblock %}
+
 {% block javascripts %}
-    <script type="module" src="{{ asset('assets/bootstrap.js') }}"></script>
+    {{ parent() }}
 {% endblock %}

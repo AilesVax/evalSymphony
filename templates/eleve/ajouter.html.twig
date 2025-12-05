@@ -3,13 +3,22 @@
 {% block title %}Ajouter un élève{% endblock %}
 
 {% block body %}
+
+<div class="example-wrapper add-form">
+
     <h1>Ajouter un élève</h1>
+        <a href="{{ path('app_eleve') }}" class="btn-blue mb-20">← Retour à la liste</a>
+
+
 
     {% for message in app.flashes('success') %}
         <div class="flash-success">{{ message }}</div>
     {% endfor %}
 
     {{ form_start(form) }}
+        {{ form_widget(form) }}
+    
 
-    {{ form_end(form) }}
+</div>
+
 {% endblock %}

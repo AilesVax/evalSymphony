@@ -58,8 +58,13 @@ public function update(Request $request, EntityManagerInterface $entityManager, 
     if (!$eleve) {
         throw $this->createNotFoundException('No eleve found for id '.$id);
     }
+    
     $prenom = $request->request->get('prenom','');
     $eleve->setPrenom($prenom);
+
+    $nom = $request->request->get('nom','');
+    $eleve->setNom($nom);
+
 
     $entityManager->flush();
 

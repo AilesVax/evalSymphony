@@ -26,7 +26,7 @@ class EleveType extends AbstractType
                     'label' => 'Classe',
                     'placeholder' => 'Choisir une classe'
 ])
-            ->add('save', SubmitType::class)
+            ->add('Ajouter', SubmitType::class)
         ;
     }
 

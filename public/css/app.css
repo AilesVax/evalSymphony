@@ -1,0 +1,161 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/
+body {
+    font-family: "Poppins", sans-serif;
+    background: #f5f6fa;
+    padding: 30px;
+    color: #333;
+}
+
+/*card*/
+.example-wrapper {
+    max-width: 1000px;
+    margin: auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+/*titre*/
+h1 {
+    margin-bottom: 25px;
+    font-size: 1.9rem;
+}
+
+/*tableau*/
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: #e7eaf3;
+    text-align: left;
+    padding: 12px;
+    font-weight: 600;
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+/*actions*/
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.actions form {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+}
+
+.actions input {
+    padding: 6px 8px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    width: 160px;
+}
+/*bouttons*/
+button {
+    padding: 7px 14px;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+.modify {
+    background: #2563eb;
+}
+.modify:hover {
+    background: #1d4ed8;
+}
+
+/* Bouton supprimer */
+.delete {
+    background: #dc2626;
+}
+.delete:hover {
+    background: #b91c1c;
+}
+
+.btn-blue {
+    display: inline-block;
+    background: #2563eb;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.btn-blue:hover {
+    background: #1d4ed8;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+/*forms*/
+.add-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: 350px;
+}
+
+.add-form label {
+    font-weight: 600;
+}
+
+.add-form input,
+.add-form select {
+    padding: 8px 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    width: 100%;
+    font-size: 0.9rem;
+    background: white;
+}
+
+.add-form button[type="submit"] {
+    margin-top: 8px;
+    background: #2563eb;
+    border-radius: 6px;
+    border: none;
+    padding: 10px 14px;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.add-form button[type="submit"]:hover {
+    background: #1d4ed8;
+}
+
+.flash-success {
+    background: #dcfce7;
+    color: #166534;
+    padding: 10px 14px;
+    border-radius: 6px;
+    border: 1px solid #bbf7d0;
+    font-size: 0.95rem;
+    display: inline-block;
+    margin-bottom: 20px;
+}
